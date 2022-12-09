@@ -1,0 +1,900 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10BBBE4CB39DB3BB8FF3221B /* Pods_SECME.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8F014B7A9E7DAE233069E1 /* Pods_SECME.framework */; };
+		7F51ADE8292EA603005E6552 /* JsonMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F51ADE7292EA603005E6552 /* JsonMessage.swift */; };
+		7F51ADEB292EA8BE005E6552 /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F51ADEA292EA8BE005E6552 /* JsonHelper.swift */; };
+		7F51ADEE292EACC5005E6552 /* RSAHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F51ADED292EACC5005E6552 /* RSAHelper.swift */; };
+		7F51ADF1292EB494005E6552 /* DBBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F51ADF0292EB494005E6552 /* DBBuilder.swift */; };
+		7F51ADF3292EB534005E6552 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F51ADF2292EB534005E6552 /* libsqlite3.0.tbd */; };
+		7F51ADF6292EC8F9005E6552 /* TypeChangeHepler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F51ADF5292EC8F9005E6552 /* TypeChangeHepler.swift */; };
+		7F5783472927184400486009 /* SECMEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5783462927184400486009 /* SECMEApp.swift */; };
+		7F5783492927184400486009 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5783482927184400486009 /* ContentView.swift */; };
+		7F57834B2927184A00486009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F57834A2927184A00486009 /* Assets.xcassets */; };
+		7F57834E2927184A00486009 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F57834D2927184A00486009 /* Preview Assets.xcassets */; };
+		7F5783582927184A00486009 /* SECMETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5783572927184A00486009 /* SECMETests.swift */; };
+		7F5783622927184B00486009 /* SECMEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5783612927184B00486009 /* SECMEUITests.swift */; };
+		7F5783642927184B00486009 /* SECMEUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5783632927184B00486009 /* SECMEUITestsLaunchTests.swift */; };
+		7F5783712927196D00486009 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5783702927196D00486009 /* LoginPage.swift */; };
+		7F57837329271A0E00486009 /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57837229271A0E00486009 /* RegisterPage.swift */; };
+		7F57837529271A7000486009 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57837429271A7000486009 /* HomePage.swift */; };
+		7F5783772927271100486009 /* FriendsListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5783762927271100486009 /* FriendsListPage.swift */; };
+		7F578379292727B000486009 /* FriendProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F578378292727B000486009 /* FriendProfilePage.swift */; };
+		7F631C3D294025D000162F50 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F631C3C294025CF00162F50 /* RegexHelper.swift */; };
+		7F801951293ED91100A9EEDB /* ChatDBBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F801950293ED91100A9EEDB /* ChatDBBuilder.swift */; };
+		7F801989293EEBDF00A9EEDB /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F801988293EEBDF00A9EEDB /* MessageTableView.swift */; };
+		7F838BE329375A260028E44C /* FriendDataBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F838BE229375A260028E44C /* FriendDataBuild.swift */; };
+		7F90D909292B7CC800C01FE0 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90D908292B7CC800C01FE0 /* ChatRoom.swift */; };
+		7F90D912292B7EC800C01FE0 /* ChatListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90D911292B7EC800C01FE0 /* ChatListPage.swift */; };
+		7F90D914292C4D5300C01FE0 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90D913292C4D5300C01FE0 /* WebSocketClient.swift */; };
+		7F92BCCC292F56D600FC8D3A /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F92BCCB292F56D600FC8D3A /* SettingPage.swift */; };
+		7FA1CCFC293F1A0600DF49EF /* MessagesCombainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1CCFB293F1A0600DF49EF /* MessagesCombainModel.swift */; };
+		7FA1CCFE293F463D00DF49EF /* ChatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1CCFD293F463D00DF49EF /* ChatListModel.swift */; };
+		7FC6654429384B99004FC13E /* TextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6654329384B99004FC13E /* TextPage.swift */; };
+		7FE0369A2935ABF7009EA6C9 /* FriendQRInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE036992935ABF7009EA6C9 /* FriendQRInfo.swift */; };
+		7FE0369F2935C00F009EA6C9 /* QRInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE0369E2935C00E009EA6C9 /* QRInfo.swift */; };
+		7FE036A12935CC2E009EA6C9 /* FriendDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE036A02935CC2E009EA6C9 /* FriendDetailPage.swift */; };
+		7FE036A42935D27F009EA6C9 /* AddFriendPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE036A32935D27F009EA6C9 /* AddFriendPage.swift */; };
+		7FE036A62935E92A009EA6C9 /* FriendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE036A52935E92A009EA6C9 /* FriendData.swift */; };
+		7FFD885E2930613B0028E964 /* MD5Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD885D2930613B0028E964 /* MD5Helper.swift */; };
+		7FFD886029306D8E0028E964 /* ActiveDivicePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD885F29306D8E0028E964 /* ActiveDivicePage.swift */; };
+		7FFD88622930939A0028E964 /* CertifyKeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD88612930939A0028E964 /* CertifyKeyPair.swift */; };
+		7FFD88652932027B0028E964 /* QRCodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD88642932027B0028E964 /* QRCodeBuilder.swift */; };
+		7FFD8869293209F40028E964 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD8868293209F40028E964 /* ScannerViewModel.swift */; };
+		7FFD886B293209FC0028E964 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD886A293209FB0028E964 /* ScannerView.swift */; };
+		7FFD886D29320A090028E964 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD886C29320A090028E964 /* CameraPreview.swift */; };
+		7FFD886F29320A130028E964 /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD886E29320A130028E964 /* QrCodeCameraDelegate.swift */; };
+		7FFD887129320A1A0028E964 /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD887029320A1A0028E964 /* QrCodeScannerView.swift */; };
+		7FFD887329320A240028E964 /* PhotolibraryickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD887229320A240028E964 /* PhotolibraryickerView.swift */; };
+		7FFD8875293461850028E964 /* CertifyKeyReaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD8874293461850028E964 /* CertifyKeyReaderModel.swift */; };
+		7FFD8877293465A00028E964 /* CertifyKeyQRCodePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD8876293465A00028E964 /* CertifyKeyQRCodePage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F5783542927184A00486009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F57833B2927184400486009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F5783422927184400486009;
+			remoteInfo = SECME;
+		};
+		7F57835E2927184B00486009 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F57833B2927184400486009 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F5783422927184400486009;
+			remoteInfo = SECME;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F8F014B7A9E7DAE233069E1 /* Pods_SECME.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SECME.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		612572C879524CC907514FEB /* Pods-SECME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SECME.debug.xcconfig"; path = "Target Support Files/Pods-SECME/Pods-SECME.debug.xcconfig"; sourceTree = "<group>"; };
+		7F51ADE7292EA603005E6552 /* JsonMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonMessage.swift; sourceTree = "<group>"; };
+		7F51ADEA292EA8BE005E6552 /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
+		7F51ADED292EACC5005E6552 /* RSAHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAHelper.swift; sourceTree = "<group>"; };
+		7F51ADF0292EB494005E6552 /* DBBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBBuilder.swift; sourceTree = "<group>"; };
+		7F51ADF2292EB534005E6552 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7F51ADF5292EC8F9005E6552 /* TypeChangeHepler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeChangeHepler.swift; sourceTree = "<group>"; };
+		7F5783432927184400486009 /* SECME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SECME.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F5783462927184400486009 /* SECMEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECMEApp.swift; sourceTree = "<group>"; };
+		7F5783482927184400486009 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7F57834A2927184A00486009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F57834D2927184A00486009 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7F5783532927184A00486009 /* SECMETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SECMETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F5783572927184A00486009 /* SECMETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECMETests.swift; sourceTree = "<group>"; };
+		7F57835D2927184B00486009 /* SECMEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SECMEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F5783612927184B00486009 /* SECMEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECMEUITests.swift; sourceTree = "<group>"; };
+		7F5783632927184B00486009 /* SECMEUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECMEUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F5783702927196D00486009 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		7F57837229271A0E00486009 /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
+		7F57837429271A7000486009 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		7F5783762927271100486009 /* FriendsListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListPage.swift; sourceTree = "<group>"; };
+		7F578378292727B000486009 /* FriendProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfilePage.swift; sourceTree = "<group>"; };
+		7F631C3C294025CF00162F50 /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
+		7F631C3E29404D6300162F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7F801950293ED91100A9EEDB /* ChatDBBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDBBuilder.swift; sourceTree = "<group>"; };
+		7F801988293EEBDF00A9EEDB /* MessageTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
+		7F838BE229375A260028E44C /* FriendDataBuild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDataBuild.swift; sourceTree = "<group>"; };
+		7F90D908292B7CC800C01FE0 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		7F90D911292B7EC800C01FE0 /* ChatListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListPage.swift; sourceTree = "<group>"; };
+		7F90D913292C4D5300C01FE0 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
+		7F92BCCB292F56D600FC8D3A /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
+		7FA1CCFB293F1A0600DF49EF /* MessagesCombainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCombainModel.swift; sourceTree = "<group>"; };
+		7FA1CCFD293F463D00DF49EF /* ChatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListModel.swift; sourceTree = "<group>"; };
+		7FC6654329384B99004FC13E /* TextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPage.swift; sourceTree = "<group>"; };
+		7FE036992935ABF7009EA6C9 /* FriendQRInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendQRInfo.swift; sourceTree = "<group>"; };
+		7FE0369E2935C00E009EA6C9 /* QRInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRInfo.swift; sourceTree = "<group>"; };
+		7FE036A02935CC2E009EA6C9 /* FriendDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailPage.swift; sourceTree = "<group>"; };
+		7FE036A32935D27F009EA6C9 /* AddFriendPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendPage.swift; sourceTree = "<group>"; };
+		7FE036A52935E92A009EA6C9 /* FriendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendData.swift; sourceTree = "<group>"; };
+		7FFD885D2930613B0028E964 /* MD5Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Helper.swift; sourceTree = "<group>"; };
+		7FFD885F29306D8E0028E964 /* ActiveDivicePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveDivicePage.swift; sourceTree = "<group>"; };
+		7FFD88612930939A0028E964 /* CertifyKeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifyKeyPair.swift; sourceTree = "<group>"; };
+		7FFD88642932027B0028E964 /* QRCodeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeBuilder.swift; sourceTree = "<group>"; };
+		7FFD8868293209F40028E964 /* ScannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		7FFD886A293209FB0028E964 /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		7FFD886C29320A090028E964 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		7FFD886E29320A130028E964 /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
+		7FFD887029320A1A0028E964 /* QrCodeScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
+		7FFD887229320A240028E964 /* PhotolibraryickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotolibraryickerView.swift; sourceTree = "<group>"; };
+		7FFD8874293461850028E964 /* CertifyKeyReaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifyKeyReaderModel.swift; sourceTree = "<group>"; };
+		7FFD8876293465A00028E964 /* CertifyKeyQRCodePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifyKeyQRCodePage.swift; sourceTree = "<group>"; };
+		F4099B9726356CA485F2FF18 /* Pods-SECME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SECME.release.xcconfig"; path = "Target Support Files/Pods-SECME/Pods-SECME.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F5783402927184400486009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F51ADF3292EB534005E6552 /* libsqlite3.0.tbd in Frameworks */,
+				10BBBE4CB39DB3BB8FF3221B /* Pods_SECME.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5783502927184A00486009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F57835A2927184B00486009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0922419FE495ABE83614E384 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				612572C879524CC907514FEB /* Pods-SECME.debug.xcconfig */,
+				F4099B9726356CA485F2FF18 /* Pods-SECME.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3DF0172A8DFC84286D849D71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F51ADF2292EB534005E6552 /* libsqlite3.0.tbd */,
+				3F8F014B7A9E7DAE233069E1 /* Pods_SECME.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F51ADE6292EA5E0005E6552 /* TypeMessage */ = {
+			isa = PBXGroup;
+			children = (
+				7F51ADE7292EA603005E6552 /* JsonMessage.swift */,
+				7FFD88612930939A0028E964 /* CertifyKeyPair.swift */,
+				7FE036A52935E92A009EA6C9 /* FriendData.swift */,
+				7F838BE229375A260028E44C /* FriendDataBuild.swift */,
+			);
+			path = TypeMessage;
+			sourceTree = "<group>";
+		};
+		7F51ADE9292EA8A9005E6552 /* JsonSupport */ = {
+			isa = PBXGroup;
+			children = (
+				7F51ADEA292EA8BE005E6552 /* JsonHelper.swift */,
+			);
+			path = JsonSupport;
+			sourceTree = "<group>";
+		};
+		7F51ADEC292EACB1005E6552 /* RSASupport */ = {
+			isa = PBXGroup;
+			children = (
+				7F51ADED292EACC5005E6552 /* RSAHelper.swift */,
+			);
+			path = RSASupport;
+			sourceTree = "<group>";
+		};
+		7F51ADEF292EB479005E6552 /* DatabaseSupport */ = {
+			isa = PBXGroup;
+			children = (
+				7F51ADF0292EB494005E6552 /* DBBuilder.swift */,
+				7F801950293ED91100A9EEDB /* ChatDBBuilder.swift */,
+			);
+			path = DatabaseSupport;
+			sourceTree = "<group>";
+		};
+		7F51ADF4292EC8DF005E6552 /* TypeChangeSupport */ = {
+			isa = PBXGroup;
+			children = (
+				7F51ADF5292EC8F9005E6552 /* TypeChangeHepler.swift */,
+			);
+			path = TypeChangeSupport;
+			sourceTree = "<group>";
+		};
+		7F57833A2927184400486009 = {
+			isa = PBXGroup;
+			children = (
+				7F5783452927184400486009 /* SECME */,
+				7F5783562927184A00486009 /* SECMETests */,
+				7F5783602927184B00486009 /* SECMEUITests */,
+				7F5783442927184400486009 /* Products */,
+				0922419FE495ABE83614E384 /* Pods */,
+				3DF0172A8DFC84286D849D71 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7F5783442927184400486009 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F5783432927184400486009 /* SECME.app */,
+				7F5783532927184A00486009 /* SECMETests.xctest */,
+				7F57835D2927184B00486009 /* SECMEUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F5783452927184400486009 /* SECME */ = {
+			isa = PBXGroup;
+			children = (
+				7F631C3E29404D6300162F50 /* Info.plist */,
+				7F5783462927184400486009 /* SECMEApp.swift */,
+				7F5783482927184400486009 /* ContentView.swift */,
+				7F5783702927196D00486009 /* LoginPage.swift */,
+				7F57837229271A0E00486009 /* RegisterPage.swift */,
+				7F57837429271A7000486009 /* HomePage.swift */,
+				7F92BCCB292F56D600FC8D3A /* SettingPage.swift */,
+				7FFD885F29306D8E0028E964 /* ActiveDivicePage.swift */,
+				7F90D911292B7EC800C01FE0 /* ChatListPage.swift */,
+				7F90D908292B7CC800C01FE0 /* ChatRoom.swift */,
+				7F801988293EEBDF00A9EEDB /* MessageTableView.swift */,
+				7FA1CCFB293F1A0600DF49EF /* MessagesCombainModel.swift */,
+				7FFD8876293465A00028E964 /* CertifyKeyQRCodePage.swift */,
+				7FC6654329384B99004FC13E /* TextPage.swift */,
+				7FA1CCFD293F463D00DF49EF /* ChatListModel.swift */,
+				7FE036A22935D172009EA6C9 /* FriendListSupport */,
+				7FFD88632932024A0028E964 /* QRSupport */,
+				7FFD885C293061040028E964 /* CheckSupport */,
+				7F51ADF4292EC8DF005E6552 /* TypeChangeSupport */,
+				7F51ADEF292EB479005E6552 /* DatabaseSupport */,
+				7F51ADEC292EACB1005E6552 /* RSASupport */,
+				7F51ADE9292EA8A9005E6552 /* JsonSupport */,
+				7F51ADE6292EA5E0005E6552 /* TypeMessage */,
+				7F90D915292C5D9000C01FE0 /* WebSocketSupport */,
+				7F57834A2927184A00486009 /* Assets.xcassets */,
+				7F57834C2927184A00486009 /* Preview Content */,
+			);
+			path = SECME;
+			sourceTree = "<group>";
+		};
+		7F57834C2927184A00486009 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7F57834D2927184A00486009 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7F5783562927184A00486009 /* SECMETests */ = {
+			isa = PBXGroup;
+			children = (
+				7F5783572927184A00486009 /* SECMETests.swift */,
+			);
+			path = SECMETests;
+			sourceTree = "<group>";
+		};
+		7F5783602927184B00486009 /* SECMEUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F5783612927184B00486009 /* SECMEUITests.swift */,
+				7F5783632927184B00486009 /* SECMEUITestsLaunchTests.swift */,
+			);
+			path = SECMEUITests;
+			sourceTree = "<group>";
+		};
+		7F90D915292C5D9000C01FE0 /* WebSocketSupport */ = {
+			isa = PBXGroup;
+			children = (
+				7F90D913292C4D5300C01FE0 /* WebSocketClient.swift */,
+			);
+			path = WebSocketSupport;
+			sourceTree = "<group>";
+		};
+		7FE036A22935D172009EA6C9 /* FriendListSupport */ = {
+			isa = PBXGroup;
+			children = (
+				7F5783762927271100486009 /* FriendsListPage.swift */,
+				7FE036992935ABF7009EA6C9 /* FriendQRInfo.swift */,
+				7FE036A02935CC2E009EA6C9 /* FriendDetailPage.swift */,
+				7F578378292727B000486009 /* FriendProfilePage.swift */,
+				7FE036A32935D27F009EA6C9 /* AddFriendPage.swift */,
+			);
+			path = FriendListSupport;
+			sourceTree = "<group>";
+		};
+		7FFD885C293061040028E964 /* CheckSupport */ = {
+			isa = PBXGroup;
+			children = (
+				7FFD885D2930613B0028E964 /* MD5Helper.swift */,
+				7F631C3C294025CF00162F50 /* RegexHelper.swift */,
+			);
+			path = CheckSupport;
+			sourceTree = "<group>";
+		};
+		7FFD88632932024A0028E964 /* QRSupport */ = {
+			isa = PBXGroup;
+			children = (
+				7FFD887229320A240028E964 /* PhotolibraryickerView.swift */,
+				7FFD887029320A1A0028E964 /* QrCodeScannerView.swift */,
+				7FFD886E29320A130028E964 /* QrCodeCameraDelegate.swift */,
+				7FFD886C29320A090028E964 /* CameraPreview.swift */,
+				7FFD8868293209F40028E964 /* ScannerViewModel.swift */,
+				7FFD886A293209FB0028E964 /* ScannerView.swift */,
+				7FFD88642932027B0028E964 /* QRCodeBuilder.swift */,
+				7FFD8874293461850028E964 /* CertifyKeyReaderModel.swift */,
+				7FE0369E2935C00E009EA6C9 /* QRInfo.swift */,
+			);
+			path = QRSupport;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F5783422927184400486009 /* SECME */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F5783672927184B00486009 /* Build configuration list for PBXNativeTarget "SECME" */;
+			buildPhases = (
+				94C81DA2D7B48D3215071F39 /* [CP] Check Pods Manifest.lock */,
+				7F57833F2927184400486009 /* Sources */,
+				7F5783402927184400486009 /* Frameworks */,
+				7F5783412927184400486009 /* Resources */,
+				ED1E17C5ABE618254978D409 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SECME;
+			productName = SECME;
+			productReference = 7F5783432927184400486009 /* SECME.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F5783522927184A00486009 /* SECMETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F57836A2927184B00486009 /* Build configuration list for PBXNativeTarget "SECMETests" */;
+			buildPhases = (
+				7F57834F2927184A00486009 /* Sources */,
+				7F5783502927184A00486009 /* Frameworks */,
+				7F5783512927184A00486009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F5783552927184A00486009 /* PBXTargetDependency */,
+			);
+			name = SECMETests;
+			productName = SECMETests;
+			productReference = 7F5783532927184A00486009 /* SECMETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7F57835C2927184B00486009 /* SECMEUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F57836D2927184B00486009 /* Build configuration list for PBXNativeTarget "SECMEUITests" */;
+			buildPhases = (
+				7F5783592927184B00486009 /* Sources */,
+				7F57835A2927184B00486009 /* Frameworks */,
+				7F57835B2927184B00486009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F57835F2927184B00486009 /* PBXTargetDependency */,
+			);
+			name = SECMEUITests;
+			productName = SECMEUITests;
+			productReference = 7F57835D2927184B00486009 /* SECMEUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F57833B2927184400486009 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					7F5783422927184400486009 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					7F5783522927184A00486009 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 7F5783422927184400486009;
+					};
+					7F57835C2927184B00486009 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 7F5783422927184400486009;
+					};
+				};
+			};
+			buildConfigurationList = 7F57833E2927184400486009 /* Build configuration list for PBXProject "SECME" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F57833A2927184400486009;
+			productRefGroup = 7F5783442927184400486009 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F5783422927184400486009 /* SECME */,
+				7F5783522927184A00486009 /* SECMETests */,
+				7F57835C2927184B00486009 /* SECMEUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F5783412927184400486009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F57834E2927184A00486009 /* Preview Assets.xcassets in Resources */,
+				7F57834B2927184A00486009 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5783512927184A00486009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F57835B2927184B00486009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94C81DA2D7B48D3215071F39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SECME-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED1E17C5ABE618254978D409 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SECME/Pods-SECME-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SECME/Pods-SECME-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SECME/Pods-SECME-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F57833F2927184400486009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F801989293EEBDF00A9EEDB /* MessageTableView.swift in Sources */,
+				7FFD886029306D8E0028E964 /* ActiveDivicePage.swift in Sources */,
+				7FE036A42935D27F009EA6C9 /* AddFriendPage.swift in Sources */,
+				7FFD8877293465A00028E964 /* CertifyKeyQRCodePage.swift in Sources */,
+				7F90D914292C4D5300C01FE0 /* WebSocketClient.swift in Sources */,
+				7F90D912292B7EC800C01FE0 /* ChatListPage.swift in Sources */,
+				7F90D909292B7CC800C01FE0 /* ChatRoom.swift in Sources */,
+				7FFD886F29320A130028E964 /* QrCodeCameraDelegate.swift in Sources */,
+				7F51ADF6292EC8F9005E6552 /* TypeChangeHepler.swift in Sources */,
+				7F838BE329375A260028E44C /* FriendDataBuild.swift in Sources */,
+				7F51ADEB292EA8BE005E6552 /* JsonHelper.swift in Sources */,
+				7F51ADE8292EA603005E6552 /* JsonMessage.swift in Sources */,
+				7F631C3D294025D000162F50 /* RegexHelper.swift in Sources */,
+				7FFD8875293461850028E964 /* CertifyKeyReaderModel.swift in Sources */,
+				7FFD887129320A1A0028E964 /* QrCodeScannerView.swift in Sources */,
+				7F57837529271A7000486009 /* HomePage.swift in Sources */,
+				7FE036A62935E92A009EA6C9 /* FriendData.swift in Sources */,
+				7F801951293ED91100A9EEDB /* ChatDBBuilder.swift in Sources */,
+				7FE0369F2935C00F009EA6C9 /* QRInfo.swift in Sources */,
+				7FFD886B293209FC0028E964 /* ScannerView.swift in Sources */,
+				7F578379292727B000486009 /* FriendProfilePage.swift in Sources */,
+				7F51ADF1292EB494005E6552 /* DBBuilder.swift in Sources */,
+				7FFD8869293209F40028E964 /* ScannerViewModel.swift in Sources */,
+				7FFD88622930939A0028E964 /* CertifyKeyPair.swift in Sources */,
+				7F5783492927184400486009 /* ContentView.swift in Sources */,
+				7FFD886D29320A090028E964 /* CameraPreview.swift in Sources */,
+				7FA1CCFC293F1A0600DF49EF /* MessagesCombainModel.swift in Sources */,
+				7FFD887329320A240028E964 /* PhotolibraryickerView.swift in Sources */,
+				7FFD885E2930613B0028E964 /* MD5Helper.swift in Sources */,
+				7F92BCCC292F56D600FC8D3A /* SettingPage.swift in Sources */,
+				7F5783712927196D00486009 /* LoginPage.swift in Sources */,
+				7FE036A12935CC2E009EA6C9 /* FriendDetailPage.swift in Sources */,
+				7FE0369A2935ABF7009EA6C9 /* FriendQRInfo.swift in Sources */,
+				7F51ADEE292EACC5005E6552 /* RSAHelper.swift in Sources */,
+				7F5783472927184400486009 /* SECMEApp.swift in Sources */,
+				7FC6654429384B99004FC13E /* TextPage.swift in Sources */,
+				7FFD88652932027B0028E964 /* QRCodeBuilder.swift in Sources */,
+				7FA1CCFE293F463D00DF49EF /* ChatListModel.swift in Sources */,
+				7F5783772927271100486009 /* FriendsListPage.swift in Sources */,
+				7F57837329271A0E00486009 /* RegisterPage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F57834F2927184A00486009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F5783582927184A00486009 /* SECMETests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5783592927184B00486009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F5783642927184B00486009 /* SECMEUITestsLaunchTests.swift in Sources */,
+				7F5783622927184B00486009 /* SECMEUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F5783552927184A00486009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F5783422927184400486009 /* SECME */;
+			targetProxy = 7F5783542927184A00486009 /* PBXContainerItemProxy */;
+		};
+		7F57835F2927184B00486009 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F5783422927184400486009 /* SECME */;
+			targetProxy = 7F57835E2927184B00486009 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7F5783652927184B00486009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F5783662927184B00486009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F5783682927184B00486009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 612572C879524CC907514FEB /* Pods-SECME.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SECME/Preview Content\"";
+				DEVELOPMENT_TEAM = 93A32DDAJP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SECME/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用相机";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = test;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "需要使用互联网";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.21cm0138.SECME;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F5783692927184B00486009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4099B9726356CA485F2FF18 /* Pods-SECME.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SECME/Preview Content\"";
+				DEVELOPMENT_TEAM = 93A32DDAJP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SECME/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用相机";
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = test;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "需要使用互联网";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = test;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.21cm0138.SECME;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7F57836B2927184B00486009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CDMX3DWRPS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.21cm0138.SECMETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SECME.app/SECME";
+			};
+			name = Debug;
+		};
+		7F57836C2927184B00486009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CDMX3DWRPS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.21cm0138.SECMETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SECME.app/SECME";
+			};
+			name = Release;
+		};
+		7F57836E2927184B00486009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CDMX3DWRPS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.21cm0138.SECMEUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SECME;
+			};
+			name = Debug;
+		};
+		7F57836F2927184B00486009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CDMX3DWRPS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.21cm0138.SECMEUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SECME;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F57833E2927184400486009 /* Build configuration list for PBXProject "SECME" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F5783652927184B00486009 /* Debug */,
+				7F5783662927184B00486009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F5783672927184B00486009 /* Build configuration list for PBXNativeTarget "SECME" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F5783682927184B00486009 /* Debug */,
+				7F5783692927184B00486009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F57836A2927184B00486009 /* Build configuration list for PBXNativeTarget "SECMETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F57836B2927184B00486009 /* Debug */,
+				7F57836C2927184B00486009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F57836D2927184B00486009 /* Build configuration list for PBXNativeTarget "SECMEUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F57836E2927184B00486009 /* Debug */,
+				7F57836F2927184B00486009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F57833B2927184400486009 /* Project object */;
+}
