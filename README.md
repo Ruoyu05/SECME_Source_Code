@@ -1,2 +1,30 @@
 # SECME
  An Encrypted Chat Application (Include Server Code)
+ 
+ Server Code:
+   Language:Java
+   #If you want to run it in your server, you should install Mysql and JRE in you server.
+   #before Running this code, you must change the database setting in `MySqlConnect.java`.
+
+   Java Command:
+   -notice-------------------------------
+  `./~` is the `lib` file location in your server
+  
+   -On Windows OS------------------------
+     javac -cp .;./~/Java-WebSocket-1.5.3.jar;./~/slf4j-api-2.0.3.jar;./~/slf4j-jdk14-2.0.3.jar;./~/gson-2.9.1.jar;./~/mysql-connector-java-8.0.29.jar;./~/bcprov-jdk18on-171.jar Server.java
+     java -cp .;./~/Java-WebSocket-1.5.3.jar;./~/slf4j-api-2.0.3.jar;./~/slf4j-jdk14-2.0.3.jar;./~/gson-2.9.1.jar;./~/mysql-connector-java-8.0.29.jar;./~/bcprov-jdk18on-171.jar Server
+
+   -On Linux,MacOS-----------------------
+     javac -cp .:./~/Java-WebSocket-1.5.3.jar:./~/slf4j-api-2.0.3.jar:./~/slf4j-jdk14-2.0.3.jar:./~/gson-2.9.1.jar:./~/mysql-connector-java-8.0.29.jar:./~/bcprov-jdk18on-171.jar Server.java
+     java -cp .:./~/Java-WebSocket-1.5.3.jar:./~/slf4j-api-2.0.3.jar:./~/slf4j-jdk14-2.0.3.jar:./~/gson-2.9.1.jar:./~/mysql-connector-java-8.0.29.jar:./~/bcprov-jdk18on-171.jar Server
+  
+   
+   
+   
+ IOS Code:
+   Language:Swift
+   #If you want to run it in your iPhone, you can use Xcode to make it.
+   
+ Android Code:
+   Language:Java
+   #Waitting for Building.
