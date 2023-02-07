@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="myWaittingDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@color/alert_gray</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="myCancleAbleDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@color/alert_gray</item>
+        <!--        <item name="buttonBarNegativeButtonStyle">取消</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+</resources>

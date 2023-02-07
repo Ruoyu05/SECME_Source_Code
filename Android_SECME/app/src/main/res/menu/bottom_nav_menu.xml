@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_chatlists"
+        android:icon="@drawable/chatlist"
+        android:title="@string/memu_chat" />
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/friends"
+        android:title="@string/memu_friend" />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/keys"
+        android:title="@string/memu_key" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/setting"
+        android:title="@string/memu_setting" />
+
+</menu>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">SECME</string>
+    <string name="txtConnectionStr">コネクション:</string>
+    <string name="edtHostStr">Host</string>
+    <string name="edtPortStr">Port</string>
+    <string name="edtUsernameStr">Username</string>
+    <string name="edtPasswordStr">Password</string>
+    <string name="btnLoginStr">ログイン</string>
+    <string name="btnRegisterStr">新規登録</string>
+    <string name="txtForgotPwdStr">パスワードを忘れた</string>
+    <string name="btnlocal">(仮)オフラインで使用</string>
+    <string name="txtRegisterTitleStr">サーバー設定</string>
+    <string name="txtServerStateStr">サーバーの状態:</string>
+    <string name="txtStateOfServerStr">オフライン</string>
+    <string name="btnConServerStr">サーバーに接続する</string>
+    <string name="txtRegisterUsernameStr">ユーザー名:</string>
+    <string name="txtPasswordStr">パスワード:</string>
+    <string name="txtRepeatPassword">パスワードの確認:</string>
+    <string name="edtRepeatPasswordStr">Repeat Password</string>
+    <string name="btnDoRegisterSte">確認</string>
+
+    <string name="alert_cancle">キャンセル</string>
+    <string name="alert_agree">Agree</string>
+    <string name="btnAuthedSuccessedStr">Successful!</string>
+    <string name="btnGoLoginStr">ログインへ</string>
+    <string name="txtRegSuccessStr">アカウントを作れました!</string>
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="memu_key">鍵の管理</string>
+    <string name="memu_friend">フレンド</string>
+    <string name="memu_setting">設定</string>
+    <string name="memu_chat">チャット</string>
+</resources>

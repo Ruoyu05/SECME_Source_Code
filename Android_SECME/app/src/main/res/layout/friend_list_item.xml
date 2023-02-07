@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants" >
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@drawable/usericon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:id="@+id/txtFriendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Name"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/imgBtnAgree"
+            android:layout_width="60dp"
+            android:layout_height="36dp"
+            android:background="@drawable/radius_shape"
+            android:backgroundTint="@color/green"
+            android:focusable="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/plus"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/imgBtnDelect"
+            android:layout_width="60dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radius_shape"
+            android:backgroundTint="@color/red"
+            android:focusable="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/delect"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:id="@+id/imgBtnWaitting"
+            android:layout_width="60dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/radius_shape"
+            android:backgroundTint="#FFC107"
+            android:focusable="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/waitting" />
+
+    </LinearLayout>
+
+</LinearLayout>
