@@ -16,22 +16,22 @@ struct HomePage: View {
             TabView {
                 ChatListPage()
                     .tabItem {
-                        Image(systemName: "gear.circle.fill")
+                        Image(systemName: "message.fill")
                         Text("チャット")
                     }
                 FriendsListPage()
                     .tabItem {
-                        Image(systemName: "gear.circle.fill")
+                        Image(systemName: "person.2.fill")
                         Text("フレンド")
                     }
                 CertifyKeyQRCodePage()
                     .tabItem {
-                        Image(systemName: "gear.circle.fill")
+                        Image(systemName: "key.viewfinder")
                         Text("鍵の管理")
                     }
                 SettingPage()
                     .tabItem {
-                        Image(systemName: "gear.circle.fill")
+                        Image(systemName: "gear.circle")
                         Text("設定")
                     }
             }

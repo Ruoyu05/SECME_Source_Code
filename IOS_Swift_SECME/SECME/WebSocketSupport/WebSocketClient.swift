@@ -126,6 +126,7 @@ class WebSocketClient: NSObject, ObservableObject {
         }
     }
     
+    
     //接收消息
     private func receive() {
         webSocketTask?.receive { [weak self] result in
@@ -299,6 +300,10 @@ class WebSocketClient: NSObject, ObservableObject {
                     //验签
                     let signature = jsonMessage.contents.signature!
                     let message_md5 = getMD5(data: send_from_str + inside_json_str)
+                    
+                    print("MD5:\(message_md5)")
+                    print("signature:\(signature)")
+                   
                     let chekSignResult = RSAHelper().checkSign(publicKeyStr: friend_certifyPublicKey, signatureStr: signature, message: message_md5)
                     print("验签结果:\(chekSignResult)")
                     
@@ -336,8 +341,10 @@ class WebSocketClient: NSObject, ObservableObject {
                         ChatDBBuilder(db_name: userMd5Str, withFriendUUID: friend_uuid).gotMessage(message: newMessage, in_time: inside_json_modle.time)
                         
                         //接到了一条新的聊天消息
+                        
                         haveNewMessage = true
-                        print(haveNewMessage)
+                        print("检测haveNewMessage->true")
+                        
                         
                         
                     }else{

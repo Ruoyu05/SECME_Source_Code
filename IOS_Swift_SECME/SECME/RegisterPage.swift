@@ -18,7 +18,7 @@ struct RegisterPage: View {
     
     @State var host:String = "47.74.1.184"
 //    @State var host:String = "172.20.10.13"
-//    @State var host:String = "192.168.100.24"
+//    @State var host:String = "192.168.100.31"
     @State var portStr:String = "10086"
     
     @State var notice:String = ""
@@ -216,7 +216,7 @@ struct RegisterPage: View {
                                 }else if(password == ""){
                                     notice = "パスワードを入力してください!"
                                 }else if(password != repeatPassword){
-                                    notice = "繰り返しパスワードは一致でわない??"
+                                    notice = "パスワードが一致していません!!"
                                 }else{
                                     let contents = Contents(username: username, password: password)
                                     let jsonMessage = JsonMessage(type: "RegisterAccount", contents: contents)
@@ -336,7 +336,7 @@ struct RegisterSuccessView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100,height: 100,alignment: .center)
                     .foregroundColor(Color.green)
-                Text("アカウント作れました!")
+                Text("アカウントを作れました!")
                     .font(.body)
                     .fontWeight(.heavy)
                     .padding(.top, 130.0)

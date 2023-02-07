@@ -27,7 +27,8 @@ struct ChatRoom: View {
             .background(Color("Chat_Table_Color"))
             .ignoresSafeArea()
             .onChange(of: client.haveNewMessage, perform: { value in
-                print("检查value")
+                
+                print("检查value:" + String(value))
                 if(value){
                     print("有新消息")
                     //从数据库查询一遍消息
@@ -37,13 +38,13 @@ struct ChatRoom: View {
                     
                 }
             })
-                MessageTableView(messagesModel: messagesModel)
-                    .padding(.top, -45.0)
-                    .onAppear{
-                        print("生成MessageTable")
-                        messagesModel.messages = ChatDBBuilder(db_name: client.userMd5Str, withFriendUUID: selectedFriend.friend_uuid).getMessages()
-                    }
-
+            MessageTableView(messagesModel: messagesModel)
+                .padding(.top, -45.0)
+                .onAppear{
+                    print("生成MessageTable")
+                    messagesModel.messages = ChatDBBuilder(db_name: client.userMd5Str, withFriendUUID: selectedFriend.friend_uuid).getMessages()
+                }
+            
             HStack{
                 VStack{
                     VStack{
@@ -52,7 +53,7 @@ struct ChatRoom: View {
                             .padding(.leading, 4.0)
                             .frame(height: 35, alignment: .center)
                             .background(Color("Chat_Input_Color"))
-                            
+                        
                     }
                     .padding(.horizontal, 5.0)
                     .background(Color("Chat_Input_Color"))
@@ -127,6 +128,6 @@ struct ChatRoom: View {
         .navigationBarTitle(selectedFriend.friendName)
         .navigationBarHidden(false)
     }
-        
+    
 }
 

@@ -26,7 +26,7 @@ struct ScannerView: View {
                 
             VStack {
                 VStack {
-                    Text("请对准需要扫描的二维码")
+                    Text("QRコードにかざしてください!")
                         .font(.subheadline)
                         .foregroundColor(Color.white)
                     Text(self.viewModel.lastQrCode)
@@ -36,7 +36,7 @@ struct ScannerView: View {
                         .padding()
                         .onReceive(viewModel.$lastQrCode, perform: { receive in
                             print(receive)
-                            if("Qr-code goes here".elementsEqual(receive)){
+                            if("".elementsEqual(receive)){
                                 print("未检测到QR")
                                 print("----------------")
                             }else{
@@ -74,10 +74,10 @@ struct ScannerView: View {
                 .frame(width: 60, height: 60, alignment: .center)
                 .background(Color.white)
                 .cornerRadius(10)
-                Button("取消") {
+                Button("キャンセル") {
                     isReadingQR = false
                 }.frame(width: 160, height: 40, alignment: .center)
-                    .background(Color.blue)
+                    .background(Color.red)
                     .foregroundColor(Color.white)
                     .cornerRadius(8)
                 

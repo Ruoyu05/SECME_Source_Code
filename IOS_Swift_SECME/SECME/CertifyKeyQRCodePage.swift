@@ -13,6 +13,14 @@ struct CertifyKeyQRCodePage: View {
     @State var imageQR:UIImage = UIImage(systemName: "qrcode")!
     var body: some View {
         VStack{
+            
+            Text("鍵のQRコードは")
+            Text("絶対に他人に見せないこと!")
+                .fontWeight(.black)
+                .foregroundColor(Color.red)
+                
+            
+            
             Image(uiImage: imageQR)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -26,7 +34,7 @@ struct CertifyKeyQRCodePage: View {
                 imageQR = creatQRCodeImage(text: publicKeyStr, WH: 300)
                 
             }label: {
-                Text("公開鍵")
+                Text("公開鍵を表示")
                     .frame(width: 80, height: 60, alignment: .center)
                     .background(Color.blue)
                     .foregroundColor(Color.white)
@@ -42,7 +50,7 @@ struct CertifyKeyQRCodePage: View {
                 imageQR = creatQRCodeImage(text: privateKeyStr, WH: 300)
                 
             }label: {
-                Text("秘密鍵")
+                Text("秘密鍵を表示")
                     .frame(width: 80, height: 60, alignment: .center)
                     .background(Color.blue)
                     .foregroundColor(Color.white)

@@ -29,7 +29,7 @@ struct AddFriendPage: View {
             
             HStack{
                 VStack{
-                    Text("My QR Code")
+                    Text("フレンドの追加")
                         .font(.body)
                         .fontWeight(.heavy)
                 }
@@ -90,67 +90,77 @@ struct AddFriendPage: View {
                         Button {
                             isShowMyQRCode = false
                         }label: {
-                            Text("扫描好友")
-                                .frame(width: 180,height: 40,  alignment: .center)
-                                .background(Color.blue)
-                                .foregroundColor(Color.white)
-                                .cornerRadius(8)
+                            ZStack{
+                                
+                                Circle()
+                                    .frame(width: 55, height: 55, alignment: .center)
+                                    .foregroundColor(Color("Color_scanner"))
+                                Image("scanqrcode")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(Color.black)
+                                    .frame(width: 55,height: 55,alignment: .center)
+                            }
+
                         }
+                        .padding(.top, 50.0)
+                        
+                        
+                        
+                        
                     }
                 }else{
                     //扫描好友
-                    Text("追加好友")
-                    HStack{
-                        //相机
-                        ZStack{
-                            Image(systemName: "camera.viewfinder")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 100)
-                                .foregroundColor(Color.gray)
-                            
-                        }.frame(width: 100, height: 100)
-                        
-                        ZStack{
-                            Image(systemName: "viewfinder")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 100)
-                                .foregroundColor(Color.gray)
-                            Image(systemName: "photo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 58, height: 48)
-                                .foregroundColor(Color.gray)
-                            
-                        }.frame(width: 100, height: 100)
-                        //
-                        //剪切板
-                        ZStack{
-                            Image(systemName: "scissors")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 28, height: 28)
-                                .foregroundColor(Color.gray)
-                                .position(x: 40, y: 75)
-                            Image(systemName: "doc.on.clipboard")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 85, height: 85)
-                                .foregroundColor(Color.gray)
-                        } .frame(width: 100, height: 100)
-                        
-                    }
+                    
+                   
                     
                     Button {
                         isShowAction = true
                     }label: {
-                        Text("读取好友Json")
-                            .frame(width: 180,height: 40,  alignment: .center)
-                            .background(Color.blue)
-                            .foregroundColor(Color.white)
-                            .cornerRadius(8)
+                    
+                        HStack{
+                            //相机
+                            ZStack{
+                                Image(systemName: "camera.viewfinder")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor(Color.gray)
+                                
+                            }.frame(width: 100, height: 100)
+                            
+                            ZStack{
+                                Image(systemName: "viewfinder")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor(Color.gray)
+                                Image(systemName: "photo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 58, height: 48)
+                                    .foregroundColor(Color.gray)
+                                
+                            }.frame(width: 100, height: 100)
+                            
+                            //剪切板
+                            ZStack{
+                                Image(systemName: "scissors")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 28, height: 28)
+                                    .foregroundColor(Color.gray)
+                                    .position(x: 40, y: 75)
+                                Image(systemName: "doc.on.clipboard")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 85, height: 85)
+                                    .foregroundColor(Color.gray)
+                            } .frame(width: 100, height: 100)
+                            
+                        }
                     }
+                    .padding(.top, 150.0)
                     .sheet(isPresented: $isShowPhotolibrary) {
                         PhotolibraryickerView(isShowPhotolibrary: $isShowPhotolibrary, qrCodeImage: $friendQRInfo.qrCodeImg, qrCodeMessage: $friendQRInfo.message)
                     }
@@ -159,8 +169,8 @@ struct AddFriendPage: View {
                         ScannerView(isReadingQR: $isShowCamera, pasteboard:$friendQRInfo.message)
                     }
                     .actionSheet(isPresented:$isShowAction){
-                        ActionSheet(title: Text("友達の追加方法を選んでください!"),
-                                    message: Text("選択肢:"),
+                        ActionSheet(title: Text("フレンドの追加方法"),
+                                    message: Text("選んでください:"),
                                     buttons: [
                                         .default(Text("カメラ"),action: {
                                             
@@ -191,12 +201,19 @@ struct AddFriendPage: View {
                     Button {
                         isShowMyQRCode = true
                     }label: {
-                        Text("自分のQRコード")
-                            .frame(width: 180,height: 40,  alignment: .center)
-                            .background(Color.blue)
-                            .foregroundColor(Color.white)
-                            .cornerRadius(8)
+                        ZStack{
+                            
+                            Circle()
+                                .frame(width: 55, height: 55, alignment: .center)
+                                .foregroundColor(Color("Color_scanner"))
+                            Image("QRCodeImg")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundColor(Color.black)
+                                .frame(width: 55,height: 55,alignment: .center)
+                        }
                     }
+                    .padding(.top, 150.0)
                     
                     
                     NavigationLink(destination:  FriendDetailPage(friendQRInfo: friendQRInfo),isActive: $friendQRInfo.isRSAPublicKey) {

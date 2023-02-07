@@ -57,7 +57,7 @@ struct FriendProfilePage: View {
             Button {
                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
             }label: {
-                Text("友達を解除")
+                Text("フレンドを解除")
                     .frame(width: diviceWidth * 0.8,height: 40,  alignment: .center)
                     .background(Color.red)
                     .foregroundColor(Color.white)

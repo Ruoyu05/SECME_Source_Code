@@ -71,7 +71,7 @@ struct ActiveDivicePage: View {
                         client.needCreateCertifyKey = false
                         client.needCopyCertifyKey = false
                         
-                        let keyPair = RSAHelper().creatKeyPair(length: 2048)
+                        let keyPair = RSAHelper().creatKeyPair(length: 1024)
                         
                         DBBuilder(db_name: client.userMd5Str).updateCertifyKeyPair(certifyPublicKey: keyPair.getPublicKey(), certifyPrivateKey: keyPair.getPrivateKey())
                         
@@ -192,7 +192,7 @@ struct ActiveDivicePage: View {
                         Text("キャンセル")
                             .frame(width: 240, height: 40, alignment: .center)
                             .foregroundColor(Color.white)
-                            .background(Color.blue)
+                            .background(Color.red)
                             .cornerRadius(8)
                     }
                     .padding(.top, 10.0)

@@ -26,12 +26,12 @@ struct SettingPage: View {
             }
             .padding(.vertical, 20.0)
             
-            Button("退出登陆") {
+            Button("Logout") {
                 client.disconnect()
             }
             .padding(.vertical, 20.0)
             .frame(width: 200,height: 40,  alignment: .center)
-            .background(Color.blue)
+            .background(Color.red)
             .foregroundColor(Color.white)
             .cornerRadius(8)
             

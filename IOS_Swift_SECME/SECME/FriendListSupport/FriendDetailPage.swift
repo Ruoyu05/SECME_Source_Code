@@ -27,7 +27,7 @@ struct FriendDetailPage: View {
             VStack{
                 HStack{
                     VStack{
-                        Text("友達の追加")
+                        Text("フレンドの追加")
                             .font(.body)
                             .fontWeight(.heavy)
                     }
@@ -112,11 +112,11 @@ struct FriendDetailPage: View {
                 }
 
                 Spacer()
-                Button("友達を追加") {
+                Button("フレンドに追加") {
                     //获取自己的身份私钥
                     let certifyKeyPair =  DBBuilder(db_name: client.userMd5Str).getCertifyKeyPair()
                     let certifyPrivatekeyStr = certifyKeyPair.certifyPrivateKey
-                    //let certifyPublickeyStr = certifyKeyPair.certifyPublicKey
+                
 
                     //创建好友信息
                     var friendData = FriendData(nickname:nickname, friend_certifyPublicKey: friendQRInfo.certifyPublicKey,host: friendQRInfo.host, port: friendQRInfo.port, friendName: friendQRInfo.username, md5Str: friendQRInfo.md5Str)
@@ -145,6 +145,7 @@ struct FriendDetailPage: View {
                     //计算MD5
                     let signStr = sendfrom_json + inside_json
                     let md5code = getMD5(data: signStr)
+                   
 
                     //签名
                     let signature = RSAHelper().doSign(privateKeyStr: certifyPrivatekeyStr, text: md5code)

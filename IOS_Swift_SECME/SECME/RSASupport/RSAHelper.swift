@@ -98,7 +98,7 @@ class RSAHelper:ObservableObject{
         do{
             let privateKey = try PrivateKey(pemEncoded: privateKeyStr)
             let clear = try ClearMessage(string: text, using: .utf8)
-            let signature = try clear.signed(with: privateKey, digestType: .sha1)
+            let signature = try clear.signed(with: privateKey, digestType: .sha256)
             base64String = signature.base64String
             print("签名后内容:\(base64String)")
         }catch{
@@ -109,10 +109,13 @@ class RSAHelper:ObservableObject{
     func checkSign(publicKeyStr:String,signatureStr:String,message:String)->Bool{
         var result = false
         do{
+            print("testPublicKey:\(testPublicKey(publicKeyStr: publicKeyStr))")
+            
             let publicKey = try PublicKey(pemEncoded: publicKeyStr)
             let signature = try Signature(base64Encoded: signatureStr)
             let clear = try ClearMessage(string: message, using: .utf8)
-            result =  try clear.verify(with: publicKey, signature: signature, digestType: .sha1)
+//            result =  try clear.verify(with: publicKey, signature: signature, digestType: .sha1)
+            result =  try clear.verify(with: publicKey, signature: signature, digestType: .sha256)
         }catch{
             
         }

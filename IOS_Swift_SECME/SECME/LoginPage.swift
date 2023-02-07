@@ -21,7 +21,7 @@ struct LoginPage: View {
     //    @AppStorage("server_host") var host:String = "localhost"//数据初期化
 //    @AppStorage("server_host") var host:String = "172.20.10.13"//数据初期化
     
-    //    @AppStorage("server_host") var host:String = "192.168.100.24"//数据初期化
+//        @AppStorage("server_host") var host:String = "192.168.100.31"//数据初期化
         @AppStorage("server_host") var host:String = "47.74.1.184"//数据初期化
     @AppStorage("server_port") var portStr:String = "10086"//数据初期化
     
@@ -145,7 +145,7 @@ struct LoginPage: View {
                 .disabled(client.isOnConnecting)
                 
                 NavigationLink(destination: RegisterPage()) {
-                    Text("新規ユーザー")
+                    Text("新規登録")
                         .frame(width: diviceWidth * 0.8,height: 40,  alignment: .center)
                         .background(Color.blue)
                         .foregroundColor(Color.white)
@@ -153,7 +153,7 @@ struct LoginPage: View {
                 }
                 .disabled(client.isOnConnecting)
                 
-                Text("パスワードが忘れた")
+                Text("パスワードを忘れた")
                 
                 Spacer()
                 

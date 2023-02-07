@@ -21,7 +21,7 @@ struct FriendsListPage: View {
         VStack{
             HStack{
                 ZStack{
-                    Text("連絡人")
+                    Text("フレンド")
                         .font(.body)
                         .fontWeight(.heavy)
                     HStack{
@@ -49,10 +49,7 @@ struct FriendsListPage: View {
                     ScrollView {
                         LazyVStack(alignment: .leading) {
                             ForEach(0..<friendList.count, id: \.self) { number in
-                                
                                 FriendsTable(friend: friendList[number], isFriendDetailPage: $isFriendDetailPage, selectedFriend: $selectedFriend)
-                                
-                                
                             }
                         }
                     }
@@ -101,16 +98,16 @@ struct FriendsTable: View {
             }
         
     }
-
+    private let diviceWidth = UIScreen.main.bounds.width
     var body: some View {
         
         VStack{
             HStack{
-                Text("")
-                    .font(.largeTitle)
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .background(Color.green)
-                    .cornerRadius(5)
+                Image(systemName: "person.crop.square")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:36,height: 36,alignment: .center)
+                    .foregroundColor(Color.gray)
                 
                 if(friend.nickname == ""){
                     Text(friend.friendName)
@@ -120,14 +117,19 @@ struct FriendsTable: View {
                 Spacer()
                 if(!friend.active){
                     if((friend.friend_uuid == "")){
-                        Button("确认") {
+                        Button{
                             print("Click Agree")
                             //同意添加好友
                             sendAgreeMessage()
+                        }label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:18,height: 18,alignment: .center)
+                                .foregroundColor(Color.white)
                         }
-                        .frame(width: 55, height: 30, alignment: .center)
-                        .background(Color.blue)
-                        .foregroundColor(Color.white)
+                        .frame(width:55,height: 30,alignment: .center)
+                        .background(Color.green)
                         .cornerRadius(5)
                         //防止表单中多按钮重复响应
                         .buttonStyle(BorderlessButtonStyle())
@@ -165,6 +167,11 @@ struct FriendsTable: View {
                 
             }
             .padding(.horizontal, 15.0)
+            VStack{
+               
+            }
+            .frame(width: diviceWidth, height: 0.5, alignment: .center)
+            .background(Color.gray)
         }
         .gesture(onClick)
         
@@ -178,7 +185,6 @@ struct FriendsTable: View {
         //获取好友公钥
         let friend_certifyPublicKey = friend.friend_certifyPublicKey
         let friend_chat_publickey = friend.friend_chat_publickey
-        
         
         //检查数据库中已经存在数据
         DBBuilder(db_name: client.userMd5Str).checkAgreeFriend(md5Str: friend.md5Str)
@@ -221,7 +227,6 @@ struct FriendsTable: View {
         
     }
 }
-
 
 
 struct FriendsListPage_Previews: PreviewProvider {

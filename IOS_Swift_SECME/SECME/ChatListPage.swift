@@ -49,50 +49,59 @@ struct ChatListPage: View {
                                 
                                 let friendDatabuild = DBBuilder(db_name: client.userMd5Str).getChatDataBuild(friend_uuid: lastMessageList[number].uuid)
                                 
-                                NavigationLink(destination: ChatRoom(selectedFriend: friendDatabuild)) {
-                                    HStack{
-                                        Text("")
-                                            .font(.largeTitle)
-                                            .frame(width: 40, height: 40, alignment: .center)
-                                            .background(Color.green)
-                                            .cornerRadius(5)
-                                        
-                                        VStack{
+                                if(lastMessageList[number].lastMessage.elementsEqual("")){
+                                   
+                                }else{
+                                    NavigationLink(destination: ChatRoom(selectedFriend: friendDatabuild)) {
+                                        HStack{
+                                            Image(systemName: "person.crop.square")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width:36,height: 36,alignment: .center)
+                                                .foregroundColor(Color.gray)
                                             
-                                            HStack{
-                                                Text(lastMessageList[number].name)
-                                                    .foregroundColor(Color("Font_Color_Black"))
-                                                Spacer()
-                                            }
-                                            HStack{
-                                                Text(lastMessageList[number].lastMessage)
-                                                    .foregroundColor(Color.gray)
-                                                    .lineLimit(1)
-                                                Spacer()
-                                            }
-                                        }
-                                        ZStack{
-                                            if(lastMessageList[number].needReadCount > 0){
-                                                Image(systemName: "circle.fill")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                                    .frame(width: 20, height: 20, alignment: .center)
-                                                    .foregroundColor(Color.red)
+                                            VStack{
                                                 
-                                                if(lastMessageList[number].needReadCount > 9){
-                                                    Text("n.")
-                                                        .font(.headline)
-                                                        .foregroundColor(Color.white)
-                                                }else{
-                                                    Text("\(lastMessageList[number].needReadCount)")
-                                                        .font(.headline)
-                                                        .foregroundColor(Color.white)
+                                                HStack{
+                                                    Text(lastMessageList[number].name)
+                                                        .foregroundColor(Color("Font_Color_Black"))
+                                                    Spacer()
+                                                }
+                                                HStack{
+                                                    Text(lastMessageList[number].lastMessage)
+                                                        .foregroundColor(Color.gray)
+                                                        .lineLimit(1)
+                                                    Spacer()
                                                 }
                                             }
-                                        }.frame(width: 40, height: 40, alignment: .center)
-                                        
-                                    }.padding(.leading, 15.0)
+                                            ZStack{
+                                                if(lastMessageList[number].needReadCount > 0){
+                                                    Image(systemName: "circle.fill")
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fit)
+                                                        .frame(width: 20, height: 20, alignment: .center)
+                                                        .foregroundColor(Color.red)
+                                                    
+                                                    if(lastMessageList[number].needReadCount > 9){
+                                                        Text("n.")
+                                                            .font(.headline)
+                                                            .foregroundColor(Color.white)
+                                                    }else{
+                                                        Text("\(lastMessageList[number].needReadCount)")
+                                                            .font(.headline)
+                                                            .foregroundColor(Color.white)
+                                                    }
+                                                }
+                                            }.frame(width: 40, height: 40, alignment: .center)
+                                            
+                                        }
+                                        .padding(.leading, 15.0)
+                                    }
                                 }
+                                
+                                
+                                
+                                
                                 
 
                             

@@ -70,6 +70,7 @@ class JsonHelper:ObservableObject{
         return try! JSONEncoder().encode(input)
         
     }
+    
     func isQRInfo(inputStr:String) -> Bool{
         let inputData = TypeChangeHepler().strToUTF8(string: inputStr)
         do{
