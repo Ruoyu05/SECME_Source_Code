@@ -19,7 +19,7 @@ public class JsonHelper {
 	public static ResultForJson readJsonMessage(String jsonStr, WebSocket conn, String chat_publickey) {
 		Gson gson = new Gson();
 		JsonMessage jsonMessage = gson.fromJson(jsonStr, JsonMessage.class);
-		System.out.println("收到的消息格式为:" + jsonMessage.type);
+		// System.out.println("收到的消息格式为:" + jsonMessage.type);
 		ResultForJson result = new ResultForJson();
 		String contentsJson = gson.toJson(jsonMessage.contents);
 		switch (jsonMessage.type) {
@@ -44,12 +44,12 @@ public class JsonHelper {
 
 					try {
 						publicKey = RSAHelper.getPublicKey_from_ios(client_publickey);
-						System.out.println("从JavaKey获得公钥成功");
+						// System.out.println("从JavaKey获得公钥成功");
 					} catch (Exception e) {
-						System.out.println("从JavaKey获得公钥失败");
+						// System.out.println("从JavaKey获得公钥失败");
 						try {
 							publicKey = RSAHelper.getPublicKey_from_java(client_publickey);
-							System.out.println("从IOSKey获得公钥成功");
+							// System.out.println("从IOSKey获得公钥成功");
 						} catch (Exception e1) {
 							e1.printStackTrace();
 						}
@@ -70,7 +70,7 @@ public class JsonHelper {
 
 				break;
 			case "LoginRequest":
-				System.out.println("收到LoginRequest");
+				// System.out.println("收到LoginRequest");
 				LoginAccount loginAccount = gson.fromJson(contentsJson, LoginAccount.class);
 
 				// 获得公钥成功 报文
@@ -85,15 +85,15 @@ public class JsonHelper {
 
 				try {
 					Boolean loginResult = new MySqlConnect().checkinUser(loginAccount.username, loginAccount.password);
-					System.out.println("loginResult:"+loginResult);
+					// System.out.println("loginResult:"+loginResult);
 					returnLoginResult.result = loginResult;
 					if (!loginResult) {
-						System.out.println("用户验证失败");
+						// System.out.println("用户验证失败");
 						returnLoginResult.reasion = "ユーザー名またはパースワードが間違います!";
 					}
 					if (loginResult) {
 						// 返回用户名
-						System.out.println("返回用户名处理");
+						// System.out.println("返回用户名处理");
 						result.needDealReturnValue = true;
 						result.returnCode = "SetUserName";
 						result.returnValue = loginAccount.username;
@@ -110,7 +110,7 @@ public class JsonHelper {
 
 				break;
 			case "RegisterAccount":
-				System.out.println("收到RegisterAccount");
+				// System.out.println("收到RegisterAccount");
 				RegisterAccount userAccount = gson.fromJson(contentsJson, RegisterAccount.class);
 				result = new ResultForJson();
 				result.needReplay = true;
@@ -148,7 +148,7 @@ public class JsonHelper {
 				repalyCertifyKeyCheckResult.type = "CertifyKeyCheckResult";
 				ReturnResult returnCertifyKeyCheckResult = new ReturnResult();
 
-				System.out.println("收到CertifyKeyCheck");
+				// System.out.println("收到CertifyKeyCheck");
 				CertifyKeyCheck certifyKeyCheck = gson.fromJson(contentsJson, CertifyKeyCheck.class);
 				String certifyPublicKey = null;
 				if (certifyKeyCheck.certify_publickey.equals("none")) {

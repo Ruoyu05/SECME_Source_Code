@@ -46,8 +46,10 @@ public class WebScoketServerBuilder extends WebSocketServer {
 			server_publicKeyStr = mysqlConnection.getServerPublicKeyStr();
 			server_privateKeyStr = mysqlConnection.getServerPrivateKeyStr();
 
-			System.out.println("Server: Set Server Public Key -> " + server_publicKeyStr);
+			System.out.println("Set Server Public Key: " + server_publicKeyStr);
+			System.out.println(" ");
 			System.out.println("Server: Waitting for Client.");
+			System.out.println(" ");
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -73,7 +75,7 @@ public class WebScoketServerBuilder extends WebSocketServer {
 	@Override
 	public void onClose(WebSocket conn, int arg1, String arg2, boolean arg3) {
 		mysqlConnection.close();
-		System.out.println("A client is disconnected.");
+		System.out.println("A client disconnected.");
 	}
 
 	@Override
@@ -93,11 +95,13 @@ public class WebScoketServerBuilder extends WebSocketServer {
 		Charset charset = StandardCharsets.UTF_8;
 		String messageStr = charset.decode(messageByte).toString();
 		System.out.println("Received:" + messageStr);
+		System.out.println(" ");
 
 		// 解密
 		try {
 			String decryptMessage = RSAHelper.decryptByPrivateKey(messageStr, server_privateKeyStr);
-			System.out.println("Decrypt:" + decryptMessage);
+			System.out.println("Decrypted:" + decryptMessage);
+			System.out.println(" ");
 
 			ResultForJson resultForJson = JsonHelper.readJsonMessage(decryptMessage, conn, client_publicKeyStr);
 
