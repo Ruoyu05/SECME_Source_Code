@@ -132,7 +132,7 @@ public class RSAHelper {
 		return new String(decryptedData);
 	}
 
-	// 使用公钥加密 message明文
+	//使用公钥加密 message明文
 	public static String encryptJsonMessage(String message, PublicKey publicKey) throws Exception {
 		String result = "公钥解密失败!";
 		byte[] messageBytes = message.getBytes();// utf-8型message

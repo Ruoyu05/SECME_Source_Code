@@ -16,7 +16,7 @@ public class ClientHolder implements Runnable {
 		//为在线用户创建一条online_uuid记录
 		try {
 			online_uuid = new MySqlConnect().updateOnlineUUID(username);
-			System.out.println("UUID:" + online_uuid);
+			System.out.println("Client Online UUID:" + online_uuid);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -27,7 +27,7 @@ public class ClientHolder implements Runnable {
 		for (;;) {
 			try {
 				if (conn.isClosed()) {
-					System.out.println("服务已经断开,连接结束");
+					// System.out.println("服务已经断开,连接结束");
 					break;
 				} else {
 					try {
@@ -37,7 +37,7 @@ public class ClientHolder implements Runnable {
 						if(new MySqlConnect().getOnlineUUID(username).equals(online_uuid)){
 							// System.out.println("UUID相同,保持连接");
 						}else{
-							System.out.println("UUID不同,结束连接");
+							// System.out.println("UUID不同,结束连接");
 							conn.close();
 							break;
 						}

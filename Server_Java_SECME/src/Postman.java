@@ -27,7 +27,7 @@ public class Postman extends WebSocketClient {
 
 	@Override
 	public void onOpen(ServerHandshake handshakedata) {
-		System.out.println("Postman: On Open");
+		// System.out.println("Postman: On Open");
 	}
 	@Override
 	public void onMessage(ByteBuffer bytes) {
@@ -45,12 +45,12 @@ public class Postman extends WebSocketClient {
 
 	@Override
 	public void onClose(int code, String reason, boolean remote) {
-		System.out.println("Postman: On Close");
+		// System.out.println("Postman: On Close");
 	}
 
 	@Override
 	public void onError(Exception ex) {
-		System.out.println("Postman: On Error");
+		// System.out.println("Postman: On Error");
 
 	}
 
@@ -58,8 +58,8 @@ public class Postman extends WebSocketClient {
 		if (JsonHelper.isJson(message)) {
 			Gson gson = new Gson();
 			var json = gson.fromJson(message, JsonMessage.class);
-			System.out.println("Postman:Get Type:" + json.type);
-			System.out.println("Postman:Get JsonMessage:" + json.contents.toString());
+			// System.out.println("Postman:Get Type:" + json.type);
+			// System.out.println("Postman:Get JsonMessage:" + json.contents.toString());
 			String contentsJson = gson.toJson(json.contents);
 			ServerPublicKey serverPublicKey_Json = gson.fromJson(contentsJson, ServerPublicKey.class);
 			String server_publickey = serverPublicKey_Json.server_publickey;
@@ -73,11 +73,11 @@ public class Postman extends WebSocketClient {
 		}
 
 		if(message.equals("false")){
-			System.out.println("Postman:Get False");
+			// System.out.println("Postman:Get False");
 			//关闭连接
 			close();
 		}else if(message.equals("true")){
-			System.out.println("Postman:Get True");
+			// System.out.println("Postman:Get True");
 			//关闭连接
 			close();
 		}

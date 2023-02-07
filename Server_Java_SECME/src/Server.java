@@ -18,7 +18,7 @@ public class Server {
 
             //启动服务器
             WebScoketServerBuilder server = new WebScoketServerBuilder(10086);
-            System.out.println("Server: Start on port: " + server.getPort());
+            System.out.println("Server start on port: " + server.getPort());
             server.start();
 
         } catch (SQLException e) {
@@ -28,8 +28,6 @@ public class Server {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-
-
 
     }
 }

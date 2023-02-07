@@ -73,7 +73,7 @@ public class WebScoketServerBuilder extends WebSocketServer {
 	@Override
 	public void onClose(WebSocket conn, int arg1, String arg2, boolean arg3) {
 		mysqlConnection.close();
-		System.out.println("客户端关闭");
+		System.out.println("A client is disconnected.");
 	}
 
 	@Override
@@ -83,7 +83,7 @@ public class WebScoketServerBuilder extends WebSocketServer {
 
 	@Override
 	public void onMessage(WebSocket conn, String textStr) {
-		System.out.println("Server Received:(String) -> " + textStr);
+		// System.out.println("Server Received:(String) -> " + textStr);
 	}
 
 	@Override
@@ -92,12 +92,12 @@ public class WebScoketServerBuilder extends WebSocketServer {
 
 		Charset charset = StandardCharsets.UTF_8;
 		String messageStr = charset.decode(messageByte).toString();
-		System.out.println("Server Received:(ByteBuffer) -> " + messageStr);
+		System.out.println("Received:" + messageStr);
 
 		// 解密
 		try {
 			String decryptMessage = RSAHelper.decryptByPrivateKey(messageStr, server_privateKeyStr);
-			System.out.println("result:" + decryptMessage);
+			System.out.println("Decrypt:" + decryptMessage);
 
 			ResultForJson resultForJson = JsonHelper.readJsonMessage(decryptMessage, conn, client_publicKeyStr);
 
@@ -105,17 +105,17 @@ public class WebScoketServerBuilder extends WebSocketServer {
 				switch (resultForJson.returnCode) {
 					case "client_publickey":
 						client_publicKeyStr = resultForJson.returnValue;
-						System.out.println("保存客户端公钥:" + client_publicKeyStr);
+						// System.out.println("保存客户端公钥:" + client_publicKeyStr);
 						break;
 					case "client_publickey_error":
 						conn.send(resultForJson.repalyMessage.getBytes());
 						conn.close();
 						break;
 					case "AuthKeysSuccessful":
-						System.out.println("认证密钥成功，启动轮询消息!");
+						// System.out.println("认证密钥成功，启动轮询消息!");
 
 						// 为已登陆的用户建立一个进程
-						System.out.println("为已登陆的用户建立一个查询进程");
+						// System.out.println("为已登陆的用户建立一个查询进程");
 						Thread clientThread = new Thread(new ClientHolder(conn, username, client_publicKeyStr));
 						clientThread.setName("Client_" + username);
 						clientThread.start();
@@ -123,7 +123,7 @@ public class WebScoketServerBuilder extends WebSocketServer {
 						case "SetUserName":
 						//设定用户名
 						username = resultForJson.returnValue;
-						System.out.println("设定用户名:"+username);
+						// System.out.println("设定用户名:"+username);
 						break;
 					default:
 						break;
@@ -141,7 +141,7 @@ public class WebScoketServerBuilder extends WebSocketServer {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("Server Received:(ByteBuffer) -> 解密失败,终止链接");
+			// System.out.println("Server Received:(ByteBuffer) -> 解密失败,终止链接");
 			conn.close();
 		}
 

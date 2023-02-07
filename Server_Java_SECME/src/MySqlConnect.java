@@ -132,7 +132,7 @@ public class MySqlConnect {
 	public Boolean savePostMessage(PostMessage postLetter) {
 
 		String uuid = UUID.randomUUID().toString();
-		System.out.println("uuid:" + uuid);
+		// System.out.println("uuid:" + uuid);
 
 		String signature = postLetter.signature;
 		String inside = postLetter.inside;
@@ -148,12 +148,12 @@ public class MySqlConnect {
 						+ uuid + "\', \'" + signature + "\', \'" + send_from + "\', \'" + username + "\', \'" + host
 						+ "\', \'"
 						+ port + "\', \'" + inside + "\', NOW())";
-				System.out.println("插入数据库的SQL:" + sql);
+				// System.out.println("插入数据库的SQL:" + sql);
 				stmt.executeUpdate(sql);
-				System.out.println("插入通信数据成功");
+				// System.out.println("插入通信数据成功");
 				return true;
 			} catch (SQLException e) {
-				System.out.println("插入通信数据失败");
+				// System.out.println("插入通信数据失败");
 				e.printStackTrace();
 				return false;
 			}
@@ -167,13 +167,13 @@ public class MySqlConnect {
 		try {
 			rs = stmt.executeQuery(sql);
 			if (rs.next()) {
-				System.out.println("用户" + username + "存在");
+				// System.out.println("用户" + username + "存在");
 				return true;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("用户" + username + "不存在");
+		// System.out.println("用户" + username + "不存在");
 		return false;
 	}
 
@@ -253,26 +253,26 @@ public class MySqlConnect {
 		String sql = "SELECT * FROM `user_account` WHERE `username` = \'" + username + "'";
 		String certifyPublicKey = "";
 		String passwordRecord = "";
-		System.out.println("核对密码及检查公钥");
+		// System.out.println("核对密码及检查公钥");
 		try {
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				certifyPublicKey = rs.getString("certify_publickey");
-				System.out.println("certifyPublicKey = " + certifyPublicKey);
+				// System.out.println("certifyPublicKey = " + certifyPublicKey);
 				passwordRecord = rs.getString("password");
-				System.out.println("passwordRecord = " + passwordRecord);
+				// System.out.println("passwordRecord = " + passwordRecord);
 			}
 
 			if (passwordRecord.equals(password) && null == certifyPublicKey) {
-				System.out.println("执行写入公钥");
+				// System.out.println("执行写入公钥");
 
 				sql = "UPDATE `user_account` SET `certify_publickey` = \'" + certify_publickey + "\' WHERE `username` = \'"
 						+ username + "'";
 				stmt.executeUpdate(sql);
-				System.out.println("更新PublicKey");
+				// System.out.println("更新PublicKey");
 				return true;
 			} else {
-				System.out.println("核对未通过");
+				// System.out.println("核对未通过");
 			}
 
 		} catch (SQLException e) {
@@ -292,11 +292,11 @@ public class MySqlConnect {
 			}
 			if (!user.equals("")) {
 				// 用户存在
-				System.out.println("用户" + username + "存在");
+				// System.out.println("用户" + username + "存在");
 				return false;
 			} else {
 				// 用户不存在
-				System.out.println("用户" + username + "不存在");
+				// System.out.println("用户" + username + "不存在");
 				sql = "INSERT INTO `user_account` (`username`, `password`) VALUES (\'" + username
 						+ "\', \'"
 						+ password + "\')";

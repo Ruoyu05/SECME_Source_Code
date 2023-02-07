@@ -127,12 +127,12 @@ public class JsonHelper {
 						returnRegisterResult.reasion = "アカンウトを作りました!";
 					} else {
 						returnRegisterResult.result = false;
-						returnRegisterResult.reasion = "ユーザーもう存在しています!";
+						returnRegisterResult.reasion = "ユーザーがもう存在しています!";
 					}
 				} catch (SQLException e) {
 					// 新建用户失败
 					returnRegisterResult.result = false;
-					returnRegisterResult.reasion = "注册失败,服务器数据库错误!";
+					returnRegisterResult.reasion = "Database Error!";
 					e.printStackTrace();
 				}
 				repalyRegisterResult.contents = returnRegisterResult;
@@ -153,12 +153,12 @@ public class JsonHelper {
 				String certifyPublicKey = null;
 				if (certifyKeyCheck.certify_publickey.equals("none")) {
 					// 客户端没有密钥
-					System.out.println("客户端没有密钥");
+					// System.out.println("客户端没有密钥");
 					try {
 						certifyPublicKey = new MySqlConnect().getUserCertifyPublicKey(certifyKeyCheck.username);
-						System.out.println("查询username:"+certifyKeyCheck.username);
+						// System.out.println("查询username:"+ certifyKeyCheck.username);
 					} catch (SQLException e) {
-						System.out.println("客户端没有密钥 catch1");
+						// System.out.println("客户端没有密钥 catch1");
 						e.printStackTrace();
 					}
 
@@ -178,22 +178,21 @@ public class JsonHelper {
 
 						// 为IOS公钥
 						// System.out.println("certifyKey为IOS公钥");
-
 						try {
 							publicKeyStr = RSAHelper
 									.getStringFromKey(RSAHelper.getPublicKey_from_ios(certifyKeyCheck.certify_publickey));
-							// System.out.println("换为Java公钥:"+publicKeyStr);
+							// System.out.println("换为Java公钥:" + publicKeyStr);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
 
 					} else if (RSAHelper.is_Java_PublicKey(certifyKeyCheck.certify_publickey)) {
 						// 为Java公钥
-						System.out.println("certifyKey为Java公钥");
+						// System.out.println("certifyKey为Java公钥");
 						publicKeyStr = certifyKeyCheck.certify_publickey;
 					} else {
 						// 都不是
-						System.out.println("certifyKey不是公钥");
+						// System.out.println("certifyKey不是公钥");
 						publicKeyStr = "none";
 					}
 					try {
@@ -208,16 +207,17 @@ public class JsonHelper {
 
 					} else {
 						if (publicKeyStr.equals(certifyPublicKey)) {
-							System.out.println("密钥相符");
 
+							// System.out.println("密钥相符");
 							// 返回到上级进行处理
 							result.needDealReturnValue = true;
 							result.returnCode = "AuthKeysSuccessful";
 							result.repalyMessage = "Auth Keys Successful";
-
 							returnCertifyKeyCheckResult.result = false;
 						} else {
-							System.out.println("密钥不相符");
+							// System.out.println("密钥不相符");
+							// System.out.println("publicKeyStr:"+publicKeyStr);
+							// System.out.println("certifyPublicKey:"+certifyPublicKey);
 							returnCertifyKeyCheckResult.result = true;
 							returnCertifyKeyCheckResult.reasion = "need_copy";
 						}
@@ -230,7 +230,7 @@ public class JsonHelper {
 
 				break;
 			case "UpdateCertifyPublicKey":
-				System.out.println("收到UpdateCertifyPublicKey");
+				// System.out.println("收到UpdateCertifyPublicKey");
 				UpdateCertifyPublicKey updateCertifyPublicKey = gson.fromJson(contentsJson, UpdateCertifyPublicKey.class);
 				// 编辑返回的报文
 				JsonMessage repalyUpdateCertifyResult = new JsonMessage();
@@ -242,11 +242,11 @@ public class JsonHelper {
 					String key_for_store = updateCertifyPublicKey.certify_publickey;
 
 					if (RSAHelper.is_IOS_PublicKey(updateCertifyPublicKey.certify_publickey)) {
-						System.out.println("收到更新的公钥为IOS公钥,执行转换.");
+						// System.out.println("收到更新的公钥为IOS公钥,执行转换.");
 						key_for_store = RSAHelper
 								.getStringFromKey(RSAHelper.getPublicKey_from_ios(updateCertifyPublicKey.certify_publickey));
 					}
-					System.out.println("转换后的公钥:" + key_for_store);
+					// System.out.println("转换后的公钥:" + key_for_store);
 					returnUpdateCertifyResult.result = new MySqlConnect().updateCertifyPublicKey(
 							updateCertifyPublicKey.username,
 							updateCertifyPublicKey.password, key_for_store);
@@ -268,7 +268,7 @@ public class JsonHelper {
 				break;
 
 			case "PostMessage":
-				System.out.println("收到PostMessage");
+				// System.out.println("收到PostMessage");
 				PostMessage postLetter = gson.fromJson(contentsJson, PostMessage.class);
 				// 存储数据
 				result.needReplay = true;
@@ -277,46 +277,24 @@ public class JsonHelper {
 					Boolean savePostMessage = new MySqlConnect().savePostMessage(postLetter);
 					result.repalyMessage = "{\"type\":\"SavePostLetterResult\",\"Contents\":" + savePostMessage + "}";
 				} catch (SQLException e) {
-					System.out.println("数据存储失败");
+					// System.out.println("数据存储失败");
 					e.printStackTrace();
 				}
 				break;
 			case "GotLetter":
-				System.out.println("收到GotLetter");
+				// System.out.println("收到GotLetter");
 				GotLetter gotLetter = gson.fromJson(contentsJson, GotLetter.class);
 				String message_uuid = gotLetter.message_uuid;
 				try {
 					new MySqlConnect().deleteLetter(message_uuid);
-					System.out.println("删除已发送的消息成功");
+					// System.out.println("删除已发送的消息成功");
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 				break;
-			// case "AddFriendRequest":
-			// 	System.out.println("收到AddFriendRequest");
-			// 	result.needReplay = false;
-			// 	result.needDealReturnValue = false;
-			// 	// 重建报文
-			// 	PostMessage addFriendRequest = gson.fromJson(contentsJson, PostMessage.class);
-			// 	String to_host = addFriendRequest.send_to.host;
-			// 	String to_port = addFriendRequest.send_to.port;
 
-			// 	JsonMessage postMessage = new JsonMessage();
-			// 	postMessage.type = "PostMessage";
-			// 	postMessage.contents = addFriendRequest;
-			// 	String postMessageStr = gson.toJson(postMessage);
-
-			// 	// 启动机器人
-			// 	try {
-			// 		URI uri = new URI("ws://" + to_host + ":" + to_port);
-			// 		new Thread(new RobotClient(uri, postMessageStr)).run();
-			// 	} catch (URISyntaxException e) {
-			// 		e.printStackTrace();
-			// 	}
-			// 	System.out.println("Robot启动成功");
-			// 	break;
 			case "PostSendRequest":
-				System.out.println("收到PostSendRequest");
+				// System.out.println("收到PostSendRequest");
 				result.needReplay = false;
 				result.needDealReturnValue = false;
 				// 重建报文
@@ -336,7 +314,7 @@ public class JsonHelper {
 				} catch (URISyntaxException e) {
 					e.printStackTrace();
 				}
-				System.out.println("Robot启动成功");
+				// System.out.println("Robot启动成功");
 
 				break;
 			default:

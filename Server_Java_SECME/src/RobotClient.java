@@ -16,8 +16,8 @@ public class RobotClient implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("Server: Run a Client Robot");
-		System.out.println("Client Robot:"+serverUri);
+		// System.out.println("Server: Run a Client Robot");
+		// System.out.println("Client Robot:" + serverUri);
 		Postman postman = new Postman(serverUri,postMessage);
 		postman.connect();
 
