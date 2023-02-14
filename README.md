@@ -11,20 +11,34 @@
     private String db_name = "SECME_APP";
     private String db_account = "root";
     private String db_password = "12345678";
-  
 
-  Java Command:
+#########################
+Quick start:
+1.Setting MySqlConnect.java
+2.Start mysql database;
+
+3.
+Windows OS :run  windows_run.bat
+
+Mac OS     : Setting MacOS_run.sh (path of src file).
+           : start Terminal then move the MacOS_run.sh into Terminal for running.
+#########################
+
+
+
+Use Java Command:
   #Notice
   `./~` is the `lib` file location in your server
 
   #On Windows OS
-
+  e.g.
     $javac -cp .;./~/Java-WebSocket-1.5.3.jar;./~/slf4j-api-2.0.3.jar;./~/slf4j-jdk14-2.0.3.jar;./~/gson-2.9.1.jar;./~/mysql-connector-java-8.0.29.jar;./~/bcprov-jdk18on-171.jar Server.java
     $java -cp .;./~/Java-WebSocket-1.5.3.jar;./~/slf4j-api-2.0.3.jar;./~/slf4j-jdk14-2.0.3.jar;./~/gson-2.9.1.jar;./~/mysql-connector-java-8.0.29.jar;./~/bcprov-jdk18on-171.jar Server
-    
+
     You also can use winddows_run.bat to start the server.
 
   #On Linux or MacOS
+    e.g.
     $javac -cp .:./~/Java-WebSocket-1.5.3.jar:./~/slf4j-api-2.0.3.jar:./~/slf4j-jdk14-2.0.3.jar:./~/gson-2.9.1.jar:./~/mysql-connector-java-8.0.29.jar:./~/bcprov-jdk18on-171.jar Server.java
     $java -cp .:./~/Java-WebSocket-1.5.3.jar:./~/slf4j-api-2.0.3.jar:./~/slf4j-jdk14-2.0.3.jar:./~/gson-2.9.1.jar:./~/mysql-connector-java-8.0.29.jar:./~/bcprov-jdk18on-171.jar Server
 
