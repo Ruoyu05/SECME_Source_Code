@@ -18,10 +18,10 @@ Quick start:
 2.Start mysql database;
 
 3.
-Windows OS :run  windows_run.bat
+Windows OS :run  windows_run.bat in src file.
 
 Mac OS     : Setting MacOS_run.sh (path of src file).
-           : start Terminal then move the MacOS_run.sh into Terminal for running.
+           : start Terminal then use $zsh ~your src path~/MacOS_run.sh to running.
 #########################
 
 
