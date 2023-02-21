@@ -51,13 +51,10 @@ public class MainActivity extends AppCompatActivity {
         EditText edtPort = (EditText) findViewById(R.id.edtPort);
         EditText edtUsername = (EditText) findViewById(R.id.edtUsername);
         EditText edtPassword = (EditText) findViewById(R.id.edtPassword);
-        edtHost.setText("47.74.1.184");
-//        edtHost.setText("10.32.1.123");
-        edtPort.setText("10086");
+        edtHost.setText("");
+        edtPort.setText("");
         edtUsername.setText("");
         edtPassword.setText("");
-
-
         Log.i("testDebug", "开启service");
 
         //注册按钮

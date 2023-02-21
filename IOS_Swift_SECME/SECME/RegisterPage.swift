@@ -16,12 +16,8 @@ struct RegisterPage: View {
     
     @State var handler : Timer?
     
-    @State var host:String = "47.74.1.184"
-//    @State var host:String = "172.20.10.13"
-//    @State var host:String = "192.168.100.31"
-//    @State var portStr:String = "10086"
-//        @State var host:String = ""
-    @State var portStr:String = "10086"
+    @State var host:String = ""
+    @State var portStr:String = ""
     
     @State var notice:String = ""
     

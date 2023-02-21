@@ -15,17 +15,11 @@ struct LoginPage: View {
     private let diviceWidth = UIScreen.main.bounds.width
     private  let diviceHeight = UIScreen.main.bounds.height
     
-    @State var username:String = "Asuka"
-    @State var password:String = "asuka"
+    @State var username:String = ""
+    @State var password:String = ""
     
-    //    @AppStorage("server_host") var host:String = "localhost"//数据初期化
-    //    @AppStorage("server_host") var host:String = "172.20.10.13"//数据初期化
-    
-    //        @AppStorage("server_host") var host:String = "192.168.100.31"//数据初期化
-            @AppStorage("server_host") var host:String = "47.74.1.184"//数据初期化
-        @AppStorage("server_port") var portStr:String = "10086"//数据初期化
-//    @AppStorage("server_host") var host:String = ""//数据初期化
-//    @AppStorage("server_port") var portStr:String = ""//数据初期化
+    @AppStorage("server_host") var host:String = ""//数据初期化
+    @AppStorage("server_port") var portStr:String = ""//数据初期化
     
     
     var body: some View {

@@ -38,9 +38,8 @@ public class RegisterPage extends AppCompatActivity {
         EditText edtRegisterport = (EditText) findViewById(R.id.edtRegisterPort);
 
         //debug设置
-        edtRegisterHost.setText("47.74.1.184");
-//        edtRegisterHost.setText("10.32.1.123");
-        edtRegisterport.setText("10086");
+        edtRegisterHost.setText("");
+        edtRegisterport.setText("");
 
         startWebSocketService();
 

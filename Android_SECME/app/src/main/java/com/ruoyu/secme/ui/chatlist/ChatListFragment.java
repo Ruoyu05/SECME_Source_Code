@@ -93,6 +93,7 @@ public class ChatListFragment extends Fragment {
                 public void run() {
                     while (true) {
                         if(mWebSocketService != null){
+                            Log.i("finalTest", "updateTable(2)");
                             updateTable();
                             break;
                         }
@@ -100,6 +101,7 @@ public class ChatListFragment extends Fragment {
                 }
             }).start();
         } else {
+            Log.i("finalTest", "updateTable(1)");
            updateTable();
         }
 
@@ -114,7 +116,11 @@ public class ChatListFragment extends Fragment {
         for (int i = 0; i < chatItems.stream().count(); i++) {
             adapter.add(chatItems.get(i));
         }
-        binding.listChat.setAdapter(adapter);
+        //FIXME debug
+        if(chatItems.stream().count() != 0){
+            binding.listChat.setAdapter(adapter);
+        }
+
     }
 
     class ChatModeAdapter extends ArrayAdapter<LastMessageItem> {
