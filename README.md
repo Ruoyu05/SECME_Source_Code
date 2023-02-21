@@ -24,8 +24,6 @@ Mac OS     : Setting MacOS_run.sh (path of src file).
            : start Terminal then use $zsh ~your src path~/MacOS_run.sh to running.
 #########################
 
-
-
 Use Java Command:
   #Notice
   `./~` is the `lib` file location in your server
