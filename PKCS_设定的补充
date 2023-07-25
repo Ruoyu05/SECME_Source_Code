@@ -1,0 +1,10 @@
+密钥格式设定
+android、java中使用PKCS8格式密钥
+IOS中使用PKCS1格式公钥
+php上使用PKCS1格式密钥
+
+所以 在公钥公开时 
+java将密钥转换为pkcs1格式即可
+同时java验证密钥如哦是pkcs1格式，则转换为pkcs8使用
+
+私钥在ios和android、java中可以共通使用 则不需要做转换
